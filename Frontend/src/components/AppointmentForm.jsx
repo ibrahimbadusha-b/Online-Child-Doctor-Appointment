@@ -87,7 +87,7 @@ const AppointmentForm = () => {
       setIsSubmitting(true);
 
       const response = await fetch(
-        "http://localhost:2000/api/users/storeUserData",
+        "https://online-child-doctor-appointment-bk.vercel.app/api/users/storeUserData",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

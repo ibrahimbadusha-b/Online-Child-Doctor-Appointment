@@ -27,9 +27,9 @@ export default function Dashboard() {
         let url = "";
 
         if (currentUser.email === "admin@gmail.com") {
-          url = "http://localhost:2000/api/users/getUsersData";
+          url = "https://online-child-doctor-appointment-bk.vercel.app/api/users/getUsersData";
         } else {
-          url = `http://localhost:2000/api/users/singleUserData/${currentUser.email}`;
+          url = `https://online-child-doctor-appointment-bk.vercel.app/api/users/singleUserData/${currentUser.email}`;
         }
 
         const res = await fetch(url);
