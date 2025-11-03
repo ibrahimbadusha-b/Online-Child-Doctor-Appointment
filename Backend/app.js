@@ -16,7 +16,7 @@ app.get('/',(req,res,next)=>{
  res.send("<h1>Hello Mapla</h1>")}
        )
 app.use('/api/users',User);
-app.listen(process.env.PORT ||2000,()=>{
+app.listen(process.env.PORT ||2000,'0.0.0.0',()=>{
 console.log(`Server Created SuceessFully ${process.env.PORT}`);
 
 })
