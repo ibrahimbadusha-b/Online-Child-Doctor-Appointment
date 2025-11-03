@@ -7,6 +7,7 @@ const databaseConnection = require('./config/Dbconnection');
 const User = require("./routes/UserRoute");
 // In your main server file (app.js, index.js, server.js)
 const cors = require('cors');
+const PORT =process.env.PORT || 2000;
 
 const corsOptions = {
       origin: [
@@ -33,7 +34,7 @@ app.get('/', (req, res, next) => {
 }
 )
 app.use('/api/users', User);
-app.listen(process.env.PORT || 2000, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
       console.log(`Server Created SuceessFully ${process.env.PORT}`);
 
 })
