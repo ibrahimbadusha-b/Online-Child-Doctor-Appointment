@@ -1,0 +1,76 @@
+.navbar-nav .nav-link {
+  color: black;
+  border-radius: 25px;
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+
+.brand-sub{
+ font-size: 17px;
+}
+
+.active-nav {
+  color: #ee0d0d !important;
+  
+}
+
+
+@media(max-width:420px){
+  .brand-sub{
+ font-size: 12px;
+}
+
+.kid-logo{
+  height: 45px;
+  width: 45px;
+}
+.custom-title{
+  font-size: 20px;
+}
+
+.navbar-nav .nav-link{
+  font-size: 15px;
+}
+}
+
+@media(max-width:992px){
+  .navbar-nav .nav-link{
+  font-size: 17px;
+}
+}
+
+@media (max-width: 1000px) {
+  .navbar-nav .nav-link:hover {
+    color: #ee0d0d;
+    border-radius: 25px;
+    background: transparent;
+  }
+
+  .navbar-collapse .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-collapse .btn {
+    margin: 10px auto;
+    display: block;
+    width: fit-content;
+  }
+}
+
+@media (min-width: 1000px) {
+  .navbar-nav .nav-link:hover {
+    /* background: linear-gradient(135deg, #ee0d0d, #b60505); */
+    color: #ee0d0d;
+    border-radius: 25px;
+     background: transparent;
+  }
+
+}
+
+.btn-logout {
+  background: linear-gradient(135deg, #ee0d0d, #b60505);
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+  border-radius: 25px;
+
+}

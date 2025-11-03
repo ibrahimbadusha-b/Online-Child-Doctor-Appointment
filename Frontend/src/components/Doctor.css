@@ -1,0 +1,32 @@
+.doctor-image {
+    height: 200px;
+    object-fit: cover;
+    object-position: center top;
+}
+#doctor-card{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+}
+#doctor-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+@media (max-width: 576px) {
+    .doctor-image {
+        height: 280px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .doctor-image {
+        height: 240px;
+    }
+}
+
+@media (min-width: 769px) {
+    .doctor-image {
+        height: 220px;
+    }
+}

@@ -1,0 +1,17 @@
+/* Center card with smooth rounded corners */
+.card {
+  border-radius: 1rem;
+}
+
+/* Focus glow for inputs */
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(230, 10, 10, 0.25);
+  border-color: #ee0d0d;
+}
+
+/* Responsive padding for smaller devices */
+@media (max-width: 576px) {
+  .card {
+    padding: 1.5rem !important;
+  }
+}
