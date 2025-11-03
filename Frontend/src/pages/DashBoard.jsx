@@ -64,7 +64,7 @@ export default function Dashboard() {
 
     try {
       const res = await fetch(
-        `http://localhost:2000/api/users/cancelAppointment/${id}`,
+        `https://online-child-doctor-appointment-bk.vercel.app/api/users/cancelAppointment/${id}`,
         { method: "DELETE" }
       );
       const data = await res.json();
