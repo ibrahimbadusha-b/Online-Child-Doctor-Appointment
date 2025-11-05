@@ -62,6 +62,32 @@ const AllDoctors = () => {
         console.log(`Booking appointment with ${doctor.name}`);
     };
 
+    const handleNavClick = (section) => {
+    setActiveLink(section);
+
+    if (section === 'home') {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    } else {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
+
     const DoctorCard = ({ doctor }) => (
         <div className="col-lg-4 col-md-6 col-sm-12 mb-3">
             <div className="card h-100 " id='doctor-card'>
@@ -118,13 +144,13 @@ const AllDoctors = () => {
                     </div>
                     <div className="row">
                         <div className="col-6 ">
-                            <a
+                            <button
                                 className='btn btn-sm '
-                                href='/#Appointment-Form'
+                                onClick={()=>{handleNavClick('Appointment-Form')}}
                                 style={{ background: 'linear-gradient(135deg, #ee0d0d, #b60505)', color: "white" }}
                             >
                                 Book Appointment
-                            </a>
+                            </button>
                         </div>
                     </div>
 

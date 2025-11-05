@@ -66,7 +66,6 @@ export default function Dashboard() {
       setLastUpdate(new Date());
 
     } catch (err) {
-      console.error('Fetch error:', err);
       toast.error("Failed to load appointments");
     } finally {
       setLoading(false);
@@ -162,7 +161,6 @@ export default function Dashboard() {
         toast.error(data.message || "Failed to cancel appointment");
       }
     } catch (error) {
-      console.error('Delete error:', error);
       toast.error("Network error!");
     }
   };

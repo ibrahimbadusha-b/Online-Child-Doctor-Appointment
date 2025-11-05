@@ -96,7 +96,6 @@ const AppointmentForm = () => {
       );
 
       const data = await response.json();
-      console.log("API Response:", data);
 
       if (data.success === false) {
         throw new Error(data.message || "Server validation failed");
@@ -124,7 +123,6 @@ const AppointmentForm = () => {
         issue: "",
       });
     } catch (error) {
-      console.error("Error submitting form:", error);
       toast.error("Something went wrong. Please try again.", {
         position: "top-right",
         autoClose: 3000,
