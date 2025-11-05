@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
   return (
-    <footer className="container-fluid pt-5 pb-3" style={{ backgroundColor: "#e6e6e6ff" }}>
+    <footer className={window.innerWidth < 576 ?"container pt-5 pb-3":"container-fluid pt-5 pb-3"} style={{ backgroundColor: "#e6e6e6ff" }}>
       <div className='container'>
         <div className="row text-center text-lg-start px-4 gy-4">
 

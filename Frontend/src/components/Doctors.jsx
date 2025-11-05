@@ -65,7 +65,7 @@ const Doctors = () => {
 
     const DoctorCard = ({ doctor }) => (
         <div className="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">
-            <div className="card h-100 " id='doctor-card'>
+            <div className="card h-100" id='doctor-card'>
                 <div className="position-relative">
                     <img
                         className="card-img-top doctor-image"
@@ -73,11 +73,13 @@ const Doctors = () => {
                         alt={`${doctor.name}`}
                         style={{ height: '200px', objectFit: 'cover' }}
                     />
+                    
+                    {/* Updated overlay with responsive width */}
                     <div
                         className="position-absolute top-0 start-0 text-white p-2 rounded"
                         style={{
                             background: `linear-gradient(135deg, #ee0d0d, #b60505)`,
-                            width: '40%',
+                            width: window.innerWidth < 1200 ? '50%' : '40%', 
                             margin: '5px'
                         }}
                     >
@@ -92,14 +94,14 @@ const Doctors = () => {
 
                 <div className="card-body d-flex flex-column">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-12">
                             <div className="role">
                                 <p className='text-danger fw-bolder mb-1'>{doctor.specialization}</p>
-                                <p className='text-muted small'><strong>{doctor.experience} Experience</strong> </p>
+                                <p className='text-muted small'><strong>{doctor.experience} Experience</strong></p>
                             </div>
                         </div>
-                        
                     </div>
+                    
                     <div className="mb-2">
                         <p className="small mb-1">
                             <strong>Available:</strong> <span className='me-2'>{doctor.days}</span> {doctor.timing}
@@ -107,20 +109,20 @@ const Doctors = () => {
                     </div>
 
                     <div className="mb-3">
-
                         <div className="d-flex flex-wrap gap-1">
                             <span className="small mb-2"><strong>Specialties:</strong></span>
                             {doctor.specialties.map((specialty, index) => (
-                                <span key={index} className=" bg-light text-muted small">
-                                    {specialty} ,
+                                <span key={index} className="bg-light text-muted small">
+                                    {specialty},
                                 </span>
                             ))}
                         </div>
                     </div>
+                    
                     <div className="row">
-                        <div className="col-6 ">
+                        <div className="col-12">
                             <a
-                                className='btn btn-sm '
+                                className='btn btn-sm'
                                 href='#Appointment-Form'
                                 style={{ background: 'linear-gradient(135deg, #ee0d0d, #b60505)', color: "white" }}
                             >
@@ -128,7 +130,6 @@ const Doctors = () => {
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -150,7 +151,6 @@ const Doctors = () => {
                     <DoctorCard key={doctor.id} doctor={doctor} />
                 ))}
             </div>
-
         </div>
     )
 }

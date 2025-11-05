@@ -210,6 +210,7 @@ const AppointmentForm = () => {
                     className="form-control"
                     type="date"
                     name="date"
+                    placeholder="dd-mm-yyyy"
                     value={formData.date}
                     onChange={handleChange}
                     min={new Date().toISOString().split("T")[0]}
@@ -242,6 +243,7 @@ const AppointmentForm = () => {
                     placeholder="Describe symptoms or reason for visit..."
                     value={formData.issue}
                     onChange={handleChange}
+                    required
                   ></textarea>
                 </div>
               </div>
