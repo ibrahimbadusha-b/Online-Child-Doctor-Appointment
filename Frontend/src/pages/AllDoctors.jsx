@@ -1,6 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './AllDoctors.css';
+
 const AllDoctors = () => {
+    const navigate = useNavigate();
+
     const doctors = [
         {
             "id": 1,
@@ -52,41 +56,15 @@ const AllDoctors = () => {
         }
     ];
 
-    const timeSlots = [
-        "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM",
-        "11:00 AM", "11:30 AM", "04:00 PM", "04:30 PM",
-        "05:00 PM", "05:30 PM"
-    ];
-
-    const handleBookAppointment = (doctor) => {
-        console.log(`Booking appointment with ${doctor.name}`);
-    };
-
-    const handleNavClick = (section) => {
-    setActiveLink(section);
-
-    if (section === 'home') {
-      navigate('/');
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 100);
-    } else {
-      if (location.pathname !== '/') {
+    const handleBookAppointment = () => {
         navigate('/');
         setTimeout(() => {
-          const element = document.getElementById(section);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      } else {
-        const element = document.getElementById(section);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    }
-  };
+            const element = document.getElementById('Appointment-Form');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 300);
+    };
 
     const DoctorCard = ({ doctor }) => (
         <div className="col-lg-4 col-md-6 col-sm-12 mb-3">
@@ -132,7 +110,6 @@ const AllDoctors = () => {
                     </div>
 
                     <div className="mb-3">
-
                         <div className="d-flex flex-wrap gap-1">
                             <span className="small mb-2"><strong>Specialties:</strong></span>
                             {doctor.specialties.map((specialty, index) => (
@@ -146,7 +123,7 @@ const AllDoctors = () => {
                         <div className="col-6 ">
                             <button
                                 className='btn btn-sm '
-                                onClick={()=>{handleNavClick('Appointment-Form')}}
+                                onClick={handleBookAppointment}
                                 style={{ background: 'linear-gradient(135deg, #ee0d0d, #b60505)', color: "white" }}
                             >
                                 Book Appointment
@@ -170,7 +147,6 @@ const AllDoctors = () => {
                 </div>
             </div>
     
-       {/* shows all doctors in separate page */}
             <div className="row">
                 {doctors.map((doctor) => (
                     <DoctorCard key={doctor.id} doctor={doctor} />

@@ -68,7 +68,10 @@ const AppointmentForm = () => {
         autoClose: 3000,
         theme: "colored",
       });
-      navigate("/sign-up");
+      setTimeout(() => {
+        navigate("/sign-up");
+      }, 2000);
+      
       return;
     }
 

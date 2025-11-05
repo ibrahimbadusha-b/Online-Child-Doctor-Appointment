@@ -95,7 +95,7 @@ const CustomerTestimonials = () => {
 
                     <div className="mb-4">
                         <p className="text-muted mb-0 lh-lg" style={{ fontSize: '0.9rem' }}>
-                            <i className="fas fa-quote-left text-primary me-2"></i>
+                            <i className="fas fa-quote-left text-blue me-2"></i>
                             {testimonial.testimonial}
                         </p>
                     </div>
@@ -109,12 +109,12 @@ const CustomerTestimonials = () => {
                             {testimonial.location}
                         </p>
                         <p className="mb-3 small text-muted">
-                            <i className="fas fa-child me-1 text-info"></i>
+                            <i className="fas fa-child me-1 text-dark"></i>
                             Child Age: {testimonial.childAge}
                         </p>
 
                         <div className="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                            <small className="text-primary fw-medium flex-grow-1">
+                            <small className="text-blue fw-medium flex-grow-1">
                                 <i className="fas fa-user-md me-1"></i>
                                 {testimonial.doctorVisited}
                             </small>
