@@ -11,9 +11,13 @@
 
 .active-nav {
   color: #ee0d0d !important;
-  
+  font-weight: bold;
 }
 
+.btn-active {
+  background: linear-gradient(135deg, #b60505, #8a0404) !important;
+  box-shadow: 0 4px 12px rgba(238, 13, 13, 0.3);
+}
 
 @media(max-width:420px){
   .brand-sub{
@@ -59,7 +63,6 @@
 
 @media (min-width: 1000px) {
   .navbar-nav .nav-link:hover {
-    /* background: linear-gradient(135deg, #ee0d0d, #b60505); */
     color: #ee0d0d;
     border-radius: 25px;
      background: transparent;

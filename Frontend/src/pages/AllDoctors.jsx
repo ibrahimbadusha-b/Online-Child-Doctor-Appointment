@@ -143,7 +143,8 @@ const AllDoctors = () => {
                     </p>
                 </div>
             </div>
-
+    
+       {/* shows all doctors in separate page */}
             <div className="row">
                 {doctors.map((doctor) => (
                     <DoctorCard key={doctor.id} doctor={doctor} />

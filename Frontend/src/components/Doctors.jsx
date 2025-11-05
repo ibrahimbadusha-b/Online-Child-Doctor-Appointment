@@ -151,18 +151,6 @@ const Doctors = () => {
                 ))}
             </div>
 
-            {/*  <div className="row mt-5">
-                <div className="col-12">
-                    <h4 className="mb-3">Available Time Slots</h4>
-                    <div className="d-flex flex-wrap gap-2">
-                        {timeSlots.map((slot, index) => (
-                            <span key={index} className="badge bg-outline-primary border border-primary text-primary p-2">
-                                {slot}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </div> */}
         </div>
     )
 }

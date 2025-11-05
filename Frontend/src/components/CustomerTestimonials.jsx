@@ -2,7 +2,8 @@ import React from 'react';
 import './CustomerTestimonials.css'
 
 const CustomerTestimonials = () => {
-    const testimonials = [
+/*     testimonials details
+ */    const testimonials = [
         {
             id: 1,
             name: "Mrs. Priya Verma",
@@ -172,7 +173,7 @@ const CustomerTestimonials = () => {
                         </div>
 
                         <button className="carousel-control-prev position-absolute top-50 start-0 translate-middle-y opacity-100" type="button" data-bs-target="#testimonialsCarouselLg" data-bs-slide="prev" style={{ left: '-60px', width: 'auto', zIndex: 5 }}>
-                            <div className=" rounded-circle d-flex align-items-center justify-content-center shadow" style={{ width: '50px', height: '50px' , background: 'linear-gradient(135deg, #ee0d0d, #b60505)'}}>
+                            <div className=" rounded-circle d-flex align-items-center justify-content-center shadow" style={{ width: '50px', height: '50px', background: 'linear-gradient(135deg, #ee0d0d, #b60505)' }}>
                                 <i className="fas fa-chevron-left text-white"></i>
                             </div>
                         </button>
@@ -188,7 +189,7 @@ const CustomerTestimonials = () => {
                         </div>
                     </div>
                 </div>
-
+                {/* medium Devices Carousel - 2 cards */}
                 <div className="d-none d-md-block d-lg-none position-relative">
                     <div id="testimonialsCarouselMd" className="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                         <div className="carousel-inner">
@@ -230,7 +231,7 @@ const CustomerTestimonials = () => {
                             </div>
                         </button>
                         <button className="carousel-control-next position-absolute top-50 end-0 translate-middle-y opacity-100" type="button" data-bs-target="#testimonialsCarouselMd" data-bs-slide="next" style={{ right: '-50px', width: 'auto', zIndex: 5 }}>
-                            <div className=" rounded-circle d-flex align-items-center justify-content-center shadow" style={{ width: '45px', height: '45px' , background: 'linear-gradient(135deg, #ee0d0d, #b60505)'}}>
+                            <div className=" rounded-circle d-flex align-items-center justify-content-center shadow" style={{ width: '45px', height: '45px', background: 'linear-gradient(135deg, #ee0d0d, #b60505)' }}>
                                 <i className="fas fa-chevron-right text-white"></i>
                             </div>
                         </button>
@@ -242,7 +243,7 @@ const CustomerTestimonials = () => {
                         </div>
                     </div>
                 </div>
-
+                {/* mobile Devices Carousel - single cards */}
                 <div className="d-block d-md-none">
                     <div className="position-relative">
                         <div id="testimonialsCarouselSm" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="hover" data-bs-keyboard="true" data-bs-touch="true">
@@ -259,7 +260,7 @@ const CustomerTestimonials = () => {
                             </div>
 
                             <button className="carousel-control-prev position-absolute top-50 translate-middle-y opacity-100 border-0 bg-transparent" type="button" data-bs-target="#testimonialsCarouselSm" data-bs-slide="prev" style={{ left: '-25px', width: '50px', zIndex: 10 }}>
-                                <div className="rounded-circle d-flex align-items-center justify-content-center shadow" style={{ width: '40px', height: '40px' , background: 'linear-gradient(135deg, #ee0d0d, #b60505)' }}>
+                                <div className="rounded-circle d-flex align-items-center justify-content-center shadow" style={{ width: '40px', height: '40px', background: 'linear-gradient(135deg, #ee0d0d, #b60505)' }}>
                                     <i className="fas fa-chevron-left text-white"></i>
                                 </div>
                                 <span className="visually-hidden">Previous</span>
@@ -290,9 +291,9 @@ const CustomerTestimonials = () => {
 
                 <div className="row mt-4 mt-md-4 mt-lg-5">
                     <div className="col-12">
-                        <div className="text-white rounded-4 p-4 mx-auto text-center" style={{ 
-                            background: "linear-gradient(135deg, #ee0d0d, #b60505)", 
-                            maxWidth: '800px' 
+                        <div className="text-white rounded-4 p-4 mx-auto text-center" style={{
+                            background: "linear-gradient(135deg, #ee0d0d, #b60505)",
+                            maxWidth: '800px'
                         }}>
                             <h5 className="mb-3 fw-bold">Schedule Your Child's Appointment</h5>
                             <p className="mb-4 opacity-75">
@@ -305,7 +306,7 @@ const CustomerTestimonials = () => {
                                 <a className="btn btn-light px-4  d-inline d-md-none fw-medium rounded-pill" href='#Appointment-Form'>
                                     Book Appointment
                                 </a>
-                               
+
                                 <a className="btn btn-outline-light  d-none d-md-inline btn-lg px-4 fw-medium rounded-pill" href='tel:9150739154'>
                                     <i className="fas fa-phone me-2"></i>
                                     Contact Us

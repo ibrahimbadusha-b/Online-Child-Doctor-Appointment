@@ -237,13 +237,15 @@ const Services = () => {
           </nav>
         </div>
 
+        {/*   in smaller size devices show three service cards */}
         <div className="row d-block d-md-none g-2">
-          {getServices(activeTab).slice(0,3).map(service => (
+          {getServices(activeTab).slice(0, 3).map(service => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
 
-         <div className="row d-none d-md-flex g-3">
+        {/*   in medium and larger size devices show all sevices cards */}
+        <div className="row d-none d-md-flex g-3">
           {getServices(activeTab).map(service => (
             <ServiceCard key={service.id} service={service} />
           ))}

@@ -14,7 +14,6 @@
   z-index: 1;
 }
 
-/* Text content inside banner */
 .banner-content {
   z-index: 2;
   position: absolute;
@@ -29,7 +28,6 @@
   background: none;
 }
 
-/* Responsive heights */
 @media (max-width: 576px) {
   .banner-image {
     height: 230px;

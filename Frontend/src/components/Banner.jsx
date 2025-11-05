@@ -6,6 +6,7 @@ import logosm from '../assets/banner-sm.jpg';
 const Banner = () => {
   return (
     <>
+      {/* small banner for mobile devices */}
       <div className="banner-container d-sm-none position-relative">
         <img
           src={logosm}
@@ -26,7 +27,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-
+   {/* for medium and larger size devices */}
       <div className="banner-container d-none d-sm-block">  
         <a href="#Appointment-Form">
           <img

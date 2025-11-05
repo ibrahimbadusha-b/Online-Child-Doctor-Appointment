@@ -45,7 +45,6 @@ const AppointmentForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Update form email when user logs in
   useEffect(() => {
     if (currentUser?.email) {
       setFormData((prev) => ({ ...prev, authEmail: currentUser.email }));
@@ -73,7 +72,7 @@ const AppointmentForm = () => {
       return;
     }
 
-    // Check required fields
+    // Check required fields before form submit
     if (!formData.childName || !formData.childAge || !formData.doctorName || !formData.date || !formData.time || !formData.issue) {
       toast.error("Please fill all required fields.", {
         position: "top-right",
@@ -87,6 +86,7 @@ const AppointmentForm = () => {
       setIsSubmitting(true);
 
       const response = await fetch(
+        // get data from backend
         "https://online-child-doctor-appointment-bk.vercel.app/api/users/storeUserData",
         {
           method: "POST",
@@ -112,6 +112,7 @@ const AppointmentForm = () => {
         },
       });
 
+      // after submission the will blank
       setFormData({
         authEmail: currentUser.email,
         childName: "",
@@ -149,7 +150,6 @@ const AppointmentForm = () => {
 
             <form onSubmit={handleSubmit}>
               <div className="row g-2 g-lg-3">
-                {/* Child Name */}
                 <div className="col-12 col-lg-4">
                   <input
                     className="form-control"
@@ -162,7 +162,6 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                {/* Child Age */}
                 <div className="col-12 col-lg-2">
                   <input
                     className="form-control"
@@ -176,7 +175,6 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                {/* Phone */}
                 <div className="col-12 col-lg-3">
                   <input
                     className="form-control"
@@ -189,7 +187,6 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                {/* Doctor */}
                 <div className="col-12 col-lg-3">
                   <select
                     className="form-control"
@@ -207,7 +204,6 @@ const AppointmentForm = () => {
                   </select>
                 </div>
 
-                {/* Date */}
                 <div className="col-6 col-lg-3">
                   <input
                     className="form-control"
@@ -220,7 +216,6 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                {/* Time */}
                 <div className="col-6 col-lg-3">
                   <select
                     className="form-control"
@@ -238,7 +233,6 @@ const AppointmentForm = () => {
                   </select>
                 </div>
 
-                {/* Issue */}
                 <div className="col-12 col-lg-6">
                   <textarea
                     className="form-control"
@@ -251,7 +245,6 @@ const AppointmentForm = () => {
                 </div>
               </div>
 
-              {/* Submit */}
               <div className="row mt-3 mt-lg-4">
                 <div className="col-12 col-lg-2 ms-lg-auto">
                   <button
@@ -270,7 +263,7 @@ const AppointmentForm = () => {
             </form>
           </div>
         </div>
-
+         {/* setting Toastify */}
         <ToastContainer />
       </div>
     </div>

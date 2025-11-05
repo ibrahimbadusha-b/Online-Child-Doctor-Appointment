@@ -9,17 +9,17 @@ const Footer = () => {
       <div className='container'>
         <div className="row text-center text-lg-start px-4 gy-4">
 
-          {/* Hospital Info */}
+          {/* Hospital Information */}
           <div className="col-12 col-lg-5 pe-4 d-flex flex-column align-items-center align-items-lg-start">
             <img src={logo} alt="logo" height="65" width="65" className="mb-3" />
-            <h5 className="fw-bold text-primary">KidCare Children's Hospital</h5>
+            <h5 className="fw-bold text-blue">KidCare Children's Hospital</h5>
             <p className="text-muted small text-center text-lg-start">
               Providing compassionate pediatric care with advanced technology and expert doctors.
               Your child’s health is our top priority.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* quick Links */}
           <div className="col-11 col-sm-6  col-lg-3">
             <h5 className="fw-bold mb-3 text-start text-dark ms-5 ms-md-0">Quick Links</h5>
             <div className="d-flex flex-column text-start gap-2">
@@ -40,6 +40,7 @@ const Footer = () => {
 
 
           <div className="col-11 col-sm-6 col-lg-3">
+            {/* contact details */}
             <h5 className="fw-bold mb-3 text-dark text-start ms-5 ms-md-0">Contact Us</h5>
             <div className="d-flex flex-column text-start gap-2">
               <a href="tel:91 9150739154" className="text-decoration-none text-dark">
@@ -62,7 +63,7 @@ const Footer = () => {
         </div>
 
         <hr className="my-4" />
-
+        {/*  social medias links */}
         <div className="row text-center gy-3">
           <div className="col-12">
             <div className="d-flex justify-content-center gap-4 fs-5">

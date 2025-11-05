@@ -73,9 +73,9 @@ const SignInForm = () => {
             </button>
           </div>
 
-          <p className="text-center mb-0">
+          <p className=" mb-0">
             Don’t have an account?{" "}
-            <Link to="/signup" className="text-danger fw-semibold text-decoration-none">
+            <Link to="/sign-up" className="text-danger fw-semibold text-decoration-none">
               Sign Up
             </Link>
           </p>

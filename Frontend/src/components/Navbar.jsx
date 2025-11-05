@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import logo from '../assets/logo.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { auth } from '../config/firebase-config.js';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
 
@@ -25,31 +26,118 @@ const Navbar = () => {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    const updateActiveLink = () => {
+      const currentPath = location.pathname;
+      
+      if (currentPath === '/') {
+        const sections = ['home', 'service-section', 'about-section'];
+        let currentSection = 'home';
+        
+        sections.forEach(sectionId => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) {
+              currentSection = sectionId;
+            }
+          }
+        });
+        
+        setActiveLink(currentSection);
+      } else if (currentPath === '/all-doctors') {
+        setActiveLink('doctor-section');
+      } else if (currentPath === '/user-dashboard') {
+        setActiveLink('dashboard');
+      } else if (currentPath === '/sign-up' || currentPath === '/login') {
+        setActiveLink('login');
+      } else {
+        setActiveLink('');
+      }
+    };
+
+    updateActiveLink();
+
+    if (location.pathname === '/') {
+      window.addEventListener('scroll', updateActiveLink);
+      return () => window.removeEventListener('scroll', updateActiveLink);
+    }
+  }, [location.pathname]);
+
   const handleNavClick = (section) => {
     setActiveLink(section);
 
     if (section === 'home') {
       navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     } else {
-      const element = document.getElementById(section);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
   };
 
-  const allDoctorsHandler = () => navigate('/all-doctors');
+  const allDoctorsHandler = () => {
+    setActiveLink('doctor-section');
+    navigate('/all-doctors');
+  };
 
-  const loginHandler = () => navigate('/sign-up');
+  const loginHandler = () => {
+    setActiveLink('login');
+    navigate('/sign-up');
+  };
 
-  const dashboardHandler=()=> navigate('/user-dashboard');
+  const dashboardHandler = () => {
+    setActiveLink('dashboard');
+    navigate('/user-dashboard');
+  };
+
+const servicesHandler = () => {
+  setActiveLink('service-section');
+  
+  if (location.pathname !== '/') {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById('service-section');
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 300); 
+  } else {
+    const element = document.getElementById('service-section');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+};
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
       localStorage.removeItem('userToken');
       setIsLoggedIn(false);
+      setActiveLink('home');
       navigate('/');
     } catch (error) {
-      console.error('Logout Error:', error);
     }
   };
 
@@ -59,8 +147,14 @@ const Navbar = () => {
       style={{ backgroundColor: '#e6e6e6ff' }}
     >
       <div className="container-fluid">
-        {/* Logo & Brand */}
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <a 
+          className="navbar-brand d-flex align-items-center ms-2 ms-lg-0" 
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('home');
+          }}
+        >
           <img
             src={logo}
             alt="Company Logo"
@@ -78,7 +172,6 @@ const Navbar = () => {
           </div>
         </a>
 
-        {/* Offcanvas Menu Button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -99,7 +192,7 @@ const Navbar = () => {
         >
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-              <div className="navbar-brand d-flex align-items-center">
+              <div className="navbar-brand d-flex align-items-center ">
                 <img
                   src={logo}
                   alt="Company Logo"
@@ -126,7 +219,6 @@ const Navbar = () => {
           </div>
 
           <div className="offcanvas-body">
-            {/* Navigation Links */}
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
               <li className="nav-item">
                 <button
@@ -161,26 +253,27 @@ const Navbar = () => {
                   }`}
                   type="button"
                   data-bs-dismiss="offcanvas"
-                  onClick={() => handleNavClick('service-section')}
+                  onClick={servicesHandler}
                 >
                   Services
                 </button>
               </li>
-               <li className="nav-item">
-                <button
-                  className={`nav-link btn btn-link fw-normal px-3 py-2 border-0 text-start w-100 ${
-                    activeLink === 'doctor-section' ? 'active-nav' : ''
-                  }`}
-                  type="button"
-                  data-bs-dismiss="offcanvas"
-                  onClick={dashboardHandler}
-                >
-                  Dashboard
-                </button>
-              </li>
+              
+              {isLoggedIn && (
+                <li className="nav-item">
+                  <button
+                    className={`nav-link btn btn-link fw-normal px-3 py-2 border-0 text-start w-100 ${
+                      activeLink === 'dashboard' ? 'active-nav' : ''
+                    }`}
+                    type="button"
+                    data-bs-dismiss="offcanvas"
+                    onClick={dashboardHandler}
+                  >
+                    Dashboard
+                  </button>
+                </li>
+              )}
             </ul>
-           
-
 
             <div className="ms-lg-5">
               {isLoggedIn ? (
@@ -193,7 +286,9 @@ const Navbar = () => {
                 </button>
               ) : (
                 <button
-                  className="btn btn-logout text-white rounded-pill px-4 py-2 fw-medium w-100"
+                  className={`btn btn-logout text-white rounded-pill px-4 py-2 fw-medium w-100 ${
+                    activeLink === 'login' ? 'btn-active' : ''
+                  }`}
                   onClick={loginHandler}
                   data-bs-dismiss="offcanvas"
                 >
