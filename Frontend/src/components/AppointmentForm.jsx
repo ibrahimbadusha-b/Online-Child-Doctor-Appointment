@@ -71,7 +71,7 @@ const AppointmentForm = () => {
       setTimeout(() => {
         navigate("/sign-up");
       }, 2000);
-      
+
       return;
     }
 
@@ -266,7 +266,7 @@ const AppointmentForm = () => {
             </form>
           </div>
         </div>
-         {/* setting Toastify */}
+        {/* setting Toastify */}
         <ToastContainer />
       </div>
     </div>
