@@ -1,7 +1,7 @@
 import React from 'react';
 import './Banner.css';
-import logo from '../assets/ibrahim.webp';      
-import logosm from '../assets/banner-sm.jpg';   
+import banner from '../assets/banner.webp';      
+import bannersm from '../assets/banner-sm.jpg';   
 
 const Banner = () => {
   return (
@@ -9,7 +9,7 @@ const Banner = () => {
       {/* small banner for mobile devices */}
       <div className="banner-container d-sm-none position-relative">
         <img
-          src={logosm}
+          src={bannersm}
           alt="Pediatric Doctor Banner"
           className="img-fluid w-100 banner-image"
         />
@@ -31,7 +31,7 @@ const Banner = () => {
       <div className="banner-container d-none d-sm-block">  
         <a href="#Appointment-Form">
           <img
-            src={logo}
+            src={banner}
             alt="Pediatric Banner"
             className="img-fluid w-100 banner-image"
           />
