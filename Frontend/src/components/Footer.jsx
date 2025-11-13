@@ -11,8 +11,23 @@ const Footer = () => {
 
           {/* Hospital Information */}
           <div className="col-12 col-lg-5 pe-4 d-flex flex-column align-items-center align-items-lg-start">
-            <img src={logo} alt="logo" height="65" width="65" className="mb-3" />
-            <h5 className="fw-bold text-blue">KidCare Children's Hospital</h5>
+             <div className="navbar-brand d-flex align-items-center mb-3">
+              <img
+                src={logo}
+                alt="Company Logo"
+                width="60"
+                height="60"
+                className="me-2 kid-logo"
+              />
+              <div className="brand-content">
+                <h4 className="brand-title mt-sm-2 mt-md-1 mb-0 fw-bolder custom-title">
+                  KidCare
+                </h4>
+                <p className="brand-subtitle mb-0 brand-sub text-muted">
+                  Your child's health, our priority
+                </p>
+              </div>
+            </div>
             <p className="text-muted small text-center text-lg-start">
               Providing compassionate pediatric care with advanced technology and expert doctors.
               Your child’s health is our top priority.

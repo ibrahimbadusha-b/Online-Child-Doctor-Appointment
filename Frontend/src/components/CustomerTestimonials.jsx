@@ -114,11 +114,11 @@ const CustomerTestimonials = () => {
                         </p>
 
                         <div className="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                            <small className="text-blue fw-medium flex-grow-1">
+                            <small className="text-dark fw-medium flex-grow-1">
                                 <i className="fas fa-user-md me-1"></i>
                                 {testimonial.doctorVisited}
                             </small>
-                            <span className="badge bg-light text-dark border border-secondary">
+                            <span className="badge bg-primary text-white ">
                                 {testimonial.visitType}
                             </span>
                         </div>
@@ -300,18 +300,18 @@ const CustomerTestimonials = () => {
                                 Experience professional pediatric care with our qualified specialists
                             </p>
                             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                                <a className="btn btn-light d-none d-md-inline btn-lg px-4 fw-medium rounded-pill" href='#Appointment-Form'>
+                                <a className="btn btn-light d-none d-md-inline btn-lg px-4 fw-medium rounded-pill" id='testimonials-btn' href='#Appointment-Form'>
                                     Book Appointment
                                 </a>
-                                <a className="btn btn-light px-4  d-inline d-md-none fw-medium rounded-pill" href='#Appointment-Form'>
+                                <a className="btn btn-light px-4  d-inline d-md-none fw-medium rounded-pill" id='testimonials-btn' href='#Appointment-Form'>
                                     Book Appointment
                                 </a>
 
-                                <a className="btn btn-outline-light  d-none d-md-inline btn-lg px-4 fw-medium rounded-pill" href='tel:9150739154'>
+                                <a className="btn btn-outline-light  d-none d-md-inline btn-lg px-4 fw-medium rounded-pill" id='testimonials-btn' href='tel:9150739154'>
                                     <i className="fas fa-phone me-2"></i>
                                     Contact Us
                                 </a>
-                                <a className="btn btn-outline-light  d-inline d-md-none px-4 fw-medium rounded-pill" href='tel:9150739154'>
+                                <a className="btn btn-outline-light  d-inline d-md-none px-4 fw-medium rounded-pill" id='testimonials-btn' href='tel:9150739154'>
                                     <i className="fas fa-phone me-2"></i>
                                     Contact Us
                                 </a>

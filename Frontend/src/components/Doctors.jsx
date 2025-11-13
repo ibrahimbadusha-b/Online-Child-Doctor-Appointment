@@ -65,7 +65,7 @@ const Doctors = () => {
 
     const DoctorCard = ({ doctor }) => (
         <div className="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">
-            <div className="card h-100" id='doctor-card'>
+            <div className="custom-card border h-100" id='doctor-card'>
                 <div className="position-relative">
                     <img
                         className="card-img-top doctor-image"
@@ -74,7 +74,6 @@ const Doctors = () => {
                         style={{ height: '200px', objectFit: 'cover' }}
                     />
                     
-                    {/* Updated overlay with responsive width */}
                     <div
                         className="position-absolute top-0 start-0 text-white p-2 rounded"
                         style={{
@@ -112,7 +111,7 @@ const Doctors = () => {
                         <div className="d-flex flex-wrap gap-1">
                             <span className="small mb-2"><strong>Specialties:</strong></span>
                             {doctor.specialties.map((specialty, index) => (
-                                <span key={index} className="bg-light text-muted small">
+                                <span key={index} className="text-muted small">
                                     {specialty},
                                 </span>
                             ))}
@@ -122,7 +121,7 @@ const Doctors = () => {
                     <div className="row">
                         <div className="col-12">
                             <a
-                                className='btn btn-sm'
+                                className='btn btn-sm no-hover-effect'
                                 href='#Appointment-Form'
                                 style={{ background: 'linear-gradient(135deg, #ee0d0d, #b60505)', color: "white" }}
                             >

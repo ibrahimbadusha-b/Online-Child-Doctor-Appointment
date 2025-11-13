@@ -1,0 +1,11 @@
+.appointment-card {
+  box-shadow: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.appointment-card:hover {
+  box-shadow: none !important;
+  transform: none !important;
+  border: 1px solid #dee2e6; 
+}

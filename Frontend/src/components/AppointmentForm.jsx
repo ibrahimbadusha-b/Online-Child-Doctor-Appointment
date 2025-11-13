@@ -4,6 +4,7 @@ import { auth } from "../config/firebase-config.js";
 import { onAuthStateChanged } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./AppointmentForm.css";
 
 const AppointmentForm = () => {
   const navigate = useNavigate();
@@ -163,7 +164,7 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                <div className="col-12 col-lg-2">
+                <div className="col-12 col-lg-4">
                   <input
                     className="form-control"
                     type="number"
@@ -176,7 +177,7 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                <div className="col-12 col-lg-3">
+                <div className="col-12 col-lg-4">
                   <input
                     className="form-control"
                     type="tel"
@@ -188,7 +189,7 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                <div className="col-12 col-lg-3">
+                <div className="col-12 col-lg-4">
                   <select
                     className="form-control"
                     name="doctorName"
@@ -205,7 +206,7 @@ const AppointmentForm = () => {
                   </select>
                 </div>
 
-                <div className="col-6 col-lg-3">
+                <div className="col-6 col-lg-4">
                   <input
                     className="form-control"
                     type="date"
@@ -218,7 +219,7 @@ const AppointmentForm = () => {
                   />
                 </div>
 
-                <div className="col-6 col-lg-3">
+                <div className="col-6 col-lg-4">
                   <select
                     className="form-control"
                     name="time"
@@ -249,7 +250,7 @@ const AppointmentForm = () => {
               </div>
 
               <div className="row mt-3 mt-lg-4">
-                <div className="col-12 col-lg-2 ms-lg-auto">
+                <div className="col-12 col-lg-2 me-lg-auto">
                   <button
                     type="submit"
                     className="btn w-100 fw-bold"

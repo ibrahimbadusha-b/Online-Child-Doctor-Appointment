@@ -3,15 +3,27 @@
   border-radius: 25px;
   font-size: 19px;
   transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: none !important;
 }
 
-.brand-sub{
- font-size: 17px;
+.navbar-nav .nav-link:hover {
+  color: #ee0d0d !important;
+  text-decoration: none !important;
+}
+
+.brand-sub {
+  font-size: 17px;
 }
 
 .active-nav {
   color: #ee0d0d !important;
   font-weight: bold;
+  text-decoration: none;
+  outline: none !important;
+  box-shadow: none !important;
+
+
 }
 
 .btn-active {
@@ -19,34 +31,36 @@
   box-shadow: 0 4px 12px rgba(238, 13, 13, 0.3);
 }
 
-@media(max-width:420px){
-  .brand-sub{
- font-size: 12px;
+@media(max-width:420px) {
+  .brand-sub {
+    font-size: 12px;
+  }
+
+  .kid-logo {
+    height: 45px;
+    width: 45px;
+  }
+
+  .custom-title {
+    font-size: 20px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 15px;
+  }
 }
 
-.kid-logo{
-  height: 45px;
-  width: 45px;
-}
-.custom-title{
-  font-size: 20px;
-}
-
-.navbar-nav .nav-link{
-  font-size: 15px;
-}
-}
-
-@media(max-width:992px){
-  .navbar-nav .nav-link{
-  font-size: 17px;
-}
+@media(max-width:992px) {
+  .navbar-nav .nav-link {
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 1000px) {
   .navbar-nav .nav-link:hover {
     color: #ee0d0d;
     border-radius: 25px;
+    text-decoration: none;
     background: transparent;
   }
 
@@ -63,9 +77,10 @@
 
 @media (min-width: 1000px) {
   .navbar-nav .nav-link:hover {
+
     color: #ee0d0d;
     border-radius: 25px;
-     background: transparent;
+    background: transparent;
   }
 
 }

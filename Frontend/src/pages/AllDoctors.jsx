@@ -67,8 +67,8 @@ const AllDoctors = () => {
     };
 
      const DoctorCard = ({ doctor }) => (
-        <div className="col-lg-4 col-md-6 col-sm-12 mb-3 mb-lg-0">
-            <div className="card h-100" id='doctor-card'>
+        <div className="col-lg-4 col-md-6 col-sm-12 mb-3">
+            <div className="custom-card h-100" id='doctor-card'>
                 <div className="position-relative">
                     <img
                         className="card-img-top doctor-image"
@@ -115,7 +115,7 @@ const AllDoctors = () => {
                         <div className="d-flex flex-wrap gap-1">
                             <span className="small mb-2"><strong>Specialties:</strong></span>
                             {doctor.specialties.map((specialty, index) => (
-                                <span key={index} className="bg-light text-muted small">
+                                <span key={index} className="text-muted small">
                                     {specialty},
                                 </span>
                             ))}
@@ -149,7 +149,7 @@ const AllDoctors = () => {
                 </div>
             </div>
     
-            <div className="row">
+            <div className="row mb-5">
                 {doctors.map((doctor) => (
                     <DoctorCard key={doctor.id} doctor={doctor} />
                 ))}
